@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+	Clientes cadastrados
+{% endblock titulo %}
+{% block conteudo %}
+
+	{% for c in clientes %}
+		
+	
+	<ul class="list-group">
+		<li class="list-group-item">
+			
+			{{c.nome}}
+		</li>
+		
+	</ul>
+	{% endfor %}
+		
+	
+{% endblock conteudo %}

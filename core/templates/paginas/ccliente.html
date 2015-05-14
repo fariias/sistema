@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% block conteudo %}
+
+
+
+ <form action="" method="POST" role="form"  >
+     {% csrf_token %}
+     {% bootstrap_form form layout='horizontal'%}
+ 	<button type="submit" class=" btn btn-success">Concluir Cadastro</button>
+ </form>
+
+{% endblock conteudo %}
+{% block titulo %}
+	Cadastro de cliente
+{% endblock titulo %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+	Rastreadores cadastrados
+{% endblock titulo %}
+{% block conteudo %}
+
+	{% for r in rastreadores %}
+		
+	
+	<ul class="list-group">
+		<li class="list-group-item">
+			
+			Codigo: {{r.id}} / Tipo: {{r.tipo}}
+		</li>
+		
+	</ul>
+	{% endfor %}
+		
+	
+{% endblock conteudo %}

@@ -18,7 +18,8 @@ class Consultor(models.Model):
 
 class Rastreador(models.Model):
     tipo = models.CharField(max_length=100) 
-    
+    def __str__(self):
+        return str(self.id)
 
 class Contrato(models.Model):
     cliente = models.ForeignKey("Cliente")

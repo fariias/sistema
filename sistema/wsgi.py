@@ -8,6 +8,8 @@ https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/
 """
 
 import os,sys
+from django.core.wsgi import get_wsgi_application 
+from dj_static import Cling
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 settings_module = "%s.settings" % PROJECT_ROOT.split(os.sep)[-1]
 if PROJECT_ROOT not in sys.path:

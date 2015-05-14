@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'bootstrap3',
     'core',
     'dj-static',
+    'gunicorn',
 )
 
 MIDDLEWARE_CLASSES = (

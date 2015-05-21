@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^ccontrato/', 'core.views.ccontrato', name='ccontrato'),
     url(r'^rastreadores/', 'core.views.rastreadores', name='rastreadores'),
     url(r'^crastreador/', 'core.views.crastreador', name='crastreador'),
+    url(r'^contrato/(?P<id>\d+)$', 'core.views.contrato', name='contrato'),
 ]

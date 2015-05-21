@@ -5,17 +5,33 @@
 {% endblock titulo %}
 {% block conteudo %}
 
-	{% for c in contratos %}
-		
 	
-	<ul class="list-group">
-		<li class="list-group-item">
-			
-		
-		</li>
-		
-	</ul>
-	{% endfor %}
+	<table class="table table-hover">
+
+			<thead>
+				<tr>
+					<th>Nº Contrato</th>
+					<th>Cliente</th>
+					<th>Rastreador</th>
+					<th>Veiculo</th>
+					<th>Opcoes</th>
+				</tr>
+			</thead>
+			{% for c in contratos %}
+			<tbody>
+				<tr>
+					<td>{{c.id}}</td>
+					<td>{{c.cliente}}</td>
+					<td>{{c.rastreador}}</td>
+					<td>{{c.veiculo}}</td>
+					<td><a href="/contrato/{{c.id}}"><button type="button" class="btn btn-success">Imprimir Contrato</button></a></td>
+				</tr>
+			</tbody>
+			{% endfor %}
+		</table>	
+	
+	
+	
 		
 	
 {% endblock conteudo %}

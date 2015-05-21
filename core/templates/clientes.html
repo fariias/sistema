@@ -5,17 +5,38 @@
 {% endblock titulo %}
 {% block conteudo %}
 
-	{% for c in clientes %}
-		
-	
-	<ul class="list-group">
-		<li class="list-group-item">
-			
-			{{c.nome}}
-		</li>
-		
-	</ul>
-	{% endfor %}
+	<div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <ol class="breadcrumb">
+          <li>
+            <a href="/ccliente"> <button type="button" class="btn btn-success">Novo Cliente</button> </a>
+          </li>
+          </ol>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <div class="table-responsive">
+             <table class="table table-hover">
+               <thead>
+                 <tr>
+                   <th>Nome</th>
+                 </tr>
+               </thead>
+                 {% for cliente in clientes %}
+                     <tbody>
+                 <tr>
+                   <td>{{ cliente.nome }}</td>
+                 </tr>
+               </tbody>
+                 {% endfor %}
+
+             </table>
+           </div>
+        </div>
+      </div>
+    </div>
 		
 	
 {% endblock conteudo %}

@@ -1,7 +1,8 @@
 from django.db import models
 class Cliente(models.Model):
     nome = models.CharField(max_length=100)
-    sexo = models.CharField(max_length=100)
+    sexos = ((1,'Masculino'),(2,'Feminino'))
+    sexo = models.IntegerField(choices=sexos,default=1)
     nascimento = models.CharField(max_length=20)
     rg = models.IntegerField()
     cpf = models.IntegerField()
@@ -17,15 +18,26 @@ class Consultor(models.Model):
     cpf = models.IntegerField()
 
 class Rastreador(models.Model):
+    codigo = models.CharField(max_length=100)
     tipo = models.CharField(max_length=100) 
     def __str__(self):
-        return str(self.id)
+        return str(self.codigo)
 
 class Contrato(models.Model):
     cliente = models.ForeignKey("Cliente")
-    consultor = models.ForeignKey("Consultor")
     rastreador = models.ForeignKey("Rastreador")
-    vencimento = models.IntegerField()
+    dia5=5
+    dia10=10
+    dia15=15
+    vencimentos = ((dia5,'Todo dia 5'),(dia10,'Todo dia 10'),(dia15,'Todo dia 15'),)
+    vencimento = models.IntegerField(choices=vencimentos)
+    avista = 'AV'
+    parcelado = 'PC'
+    pagamentos = (
+        (avista,'Em Dinheiro'),
+        (parcelado,'Parcelado'),
+        )
+    pagamento = models.CharField(max_length=2,choices=pagamentos,default=avista)
     veiculo = models.CharField(max_length=100)
     modelo = models.CharField(max_length=50)
     cor = models.CharField(max_length=25)

@@ -1,21 +1,44 @@
 {% extends "base.html" %}
 
 {% block titulo %}
-	Rastreadores cadastrados
+	Rastreadores Cadastrados
 {% endblock titulo %}
 {% block conteudo %}
 
-	{% for r in rastreadores %}
-		
-	
-	<ul class="list-group">
-		<li class="list-group-item">
-			
-			Codigo: {{r.id}} / Tipo: {{r.tipo}}
-		</li>
-		
-	</ul>
-	{% endfor %}
+	<div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <ol class="breadcrumb">
+          <li>
+            <a href="/crastreador"> <button type="button" class="btn btn-success">Novo Rastreador</button> </a>
+          </li>
+          </ol>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <div class="table-responsive">
+             <table class="table table-hover">
+               <thead>
+                 <tr>
+                   <th>Codigo</th>
+                   <th>Tipo</th>
+                 </tr>
+               </thead>
+                 {% for rastreador in rastreadores %}
+                     <tbody>
+                 <tr>
+                   <td>{{ rastreador.id }}</td>
+                   <td>{{ rastreador.tipo }}</td>
+                 </tr>
+               </tbody>
+                 {% endfor %}
+
+             </table>
+           </div>
+        </div>
+      </div>
+    </div>
 		
 	
 {% endblock conteudo %}
